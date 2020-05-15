@@ -3,10 +3,10 @@
 
 ## Team Members:
 - Name : Adel Refat Ali | Sec : 2 | Seat No.: 3 | Email: adel.elmala2025@gmail.com
-- Name : | Sec: | Seat No.: | Email: hooodamonem111@gmail.com
-- Name : | Sec: | Seat No.: | Email:
-- Name : | Sec: | Seat No.: | Email:
-- Name : | Sec: | Seat No.: | Email:
+- Name : Ahmed Nabil Salem | Sec: 1 | Seat No.: 10 | Email: ahmednaza7@gmail.com
+- Name : Mahmoud Abdel Monem | Sec: 2  | Seat No.: 26 | Email:  hooodamonem111@gmail.com
+- Name : Ahmed Osama Mohamed| Sec: 1 | Seat No.: 2 | Email: ahmedosamam.negm@gmail.com
+- Name : Shaden Ahmed | Sec: 1 | Seat No.: 44 | Email: shaden.ahmedbaki@gmail.com
 
 
 ## Implementation:
