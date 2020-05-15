@@ -32,6 +32,7 @@ float VRot =0.0;
 float CRound = 0.0;
 float Crot  = 0.0;
 float Cpos = 0.0;
+bool animate = true;
 
 GLMmodel* model;
 
@@ -60,9 +61,11 @@ GLfloat lightPos2[] = {2.0,-9.0,5.0, 1.0 };
 GLfloat mat_amb_diff[] = {0.643, 0.753, 0.934, 1.0 };
 GLfloat mat_specular[] = { 0.0, 0.0, 0.0, 1.0 };
 GLfloat shininess[] = {100.0 };  
-
-
-
+void Timer1(int x);
+void Timer2(int x);
+void DTimer1(int x);
+void carTimer(int x);
+void stopTimers(int x );
 void init(void)
 {
     glMatrixMode(GL_PROJECTION);
@@ -262,7 +265,29 @@ void screen_menu(int value)
             break;
          case 's':
             name = "stone1.bmp";
-            break;   
+            break;
+         case '1':
+            if(animate){
+               
+               glutTimerFunc(0,carTimer,1);
+               animate = false;
+            }
+            // if(!animate){
+               
+            //    glutTimerFunc(0,carTimer,0);   
+            //    animate = true;
+            // }
+
+            break;
+         case '2':
+         glutTimerFunc(0,DTimer1,1);   
+         break;
+         case '3':
+         	glutTimerFunc(0,Timer1,0);
+            break;
+         case '4':
+         glutTimerFunc(0,Timer2,0);
+         break;   
 	}
 
 	if (name) {
@@ -1039,30 +1064,61 @@ static void motion(int x, int y)
   }
 }
 void DTimer1(int x){
-
-	DRot -= 1;
-   
-   if (Cpos == 10){
-      CRound = 1;
-      Crot = 180;
-   } 
-
-   if (Cpos == -10){
-      CRound = 0;
-      Crot = 0;
-   }
-   if(CRound == 0){
-      Cpos +=0.5;
-   } 
-
-   if(CRound == 1){
-      Cpos -=0.5;
-   } 
+if (x == 1){
+   DRot -= 1;
 	glutPostRedisplay();
-	glutTimerFunc(30, DTimer1, 0);
+	glutTimerFunc(30, DTimer1, 1);
+
+}
 
 
 }
+void carTimer(int x){
+ if (x == 1){
+
+      if (Cpos == 10){
+         CRound = 1;
+         Crot = 180;
+      } 
+
+      if (Cpos == -10){
+         CRound = 0;
+         Crot = 0;
+      }
+      if(CRound == 0){
+         Cpos +=0.5;
+      } 
+
+      if(CRound == 1){
+         Cpos -=0.5;
+      } 
+   
+	   glutPostRedisplay();
+   
+      glutTimerFunc(30, carTimer, 1);
+      // std::cout<<"MOVE"<<std::endl;
+ }
+if (x == 0){
+
+
+   	glutPostRedisplay();
+      glutTimerFunc(0, carTimer, 0);
+      // std::cout<<"STOP"<<std::endl;
+}
+   
+   
+}
+
+// void stopTimers(int x ){
+//       Cpos = Cpos;
+//       Crot = Crot;
+
+//    	glutPostRedisplay();
+   
+//       glutTimerFunc(0, stopTimers, 0);
+   
+   
+// }
 void Timer1(int x){
     // Refresh and redraw
    VRot += 5;
@@ -1139,10 +1195,17 @@ int main(int argc, char **argv)
 	glutAddMenuEntry("chess", 'c');
    glutAddMenuEntry("stripes", 'p');
 	glutAddMenuEntry("stone", 's');
+   glutAddMenuEntry("Animatios", 0);
+	glutAddMenuEntry("", 0);
+   glutAddMenuEntry("porsche", '1');
+   glutAddMenuEntry("f-16", '2');
+   glutAddMenuEntry("wave", '3');
+   glutAddMenuEntry("play soccer", '4');
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
-	glutTimerFunc(0,Timer1,0);
-   glutTimerFunc(0,Timer2,0);
-   glutTimerFunc(0,DTimer1,0);
+	// glutTimerFunc(0,Timer1,0);
+   // glutTimerFunc(0,Timer2,0);
+   // glutTimerFunc(0,DTimer1,0);
+   //  glutTimerFunc(0,carTimer,1);
    
     
 	
