@@ -1,1 +1,75 @@
-# graphics-final
+# graphics-final-project
+# SBE306B_Spring20_Project_Group_xx
+
+## Team Members:
+- Name : Adel Refat Ali | Sec : 2 | Seat No.: 3 | Email: adel.elmala2025@gmail.com
+- Name : | Sec: | Seat No.: | Email: hooodamonem111@gmail.com
+- Name : | Sec: | Seat No.: | Email:
+- Name : | Sec: | Seat No.: | Email:
+- Name : | Sec: | Seat No.: | Email:
+
+
+## Implementation:
+### Final result 
+![result](https://i.ibb.co/60hstCg/implem.png)
+
+## Loaded objects 
+### object 1
+![car](https://i.ibb.co/bstxX8R/car2.png)
+![car](https://i.ibb.co/smLJ4Lp/car.png)
+### object 2
+![al](https://i.ibb.co/nCMK2PZ/al2.png)
+![al](https://i.ibb.co/rKPyJQt/al.png)
+### object 3
+![ball](https://i.ibb.co/ky4GtDL/ball.png)
+### object 4
+![f-16](https://i.ibb.co/TRkgv8X/f-16-2.png)
+![f-16](https://i.ibb.co/6JfLDRX/f-16.png)
+
+
+## animations
+
+### Robot wave
+<!-- ![https://vimeo.com/user115583615/review/419045016/af9ce62da6](https://vimeo.com/user115583615/review/419045016/af9ce62da6) -->
+![wave](gifs/wave.gif)
+### Robot play soccer
+<!-- ![https://vimeo.com/user115583615/review/419044923/8fe10457c5](https://vimeo.com/user115583615/review/419044923/8fe10457c5) -->
+![Soccer](gifs/ball.gif)
+### Car Movement
+<!-- ![https://vimeo.com/user115583615/review/419045103/cfb1d502f8](https://vimeo.com/user115583615/review/419045103/cfb1d502f8) -->
+
+![car](gifs/car.gif)
+
+### Plane Movement
+<!-- ![https://vimeo.com/user115583615/review/419045055/33750ed128](https://vimeo.com/user115583615/review/419045055/33750ed128) -->
+![plane](gifs/plane.gif)
+## Texture Mapping
+### View 1 
+<!-- ![https://vimeo.com/user115583615/review/419044762/9448b7b9e7](https://vimeo.com/user115583615/review/419044762/9448b7b9e7) -->
+![texture1](gifs/texture.gif)
+### View 2
+<!-- ![https://vimeo.com/user115583615/review/419044849/b8a0a99f55](https://vimeo.com/user115583615/review/419044849/b8a0a99f55) -->
+![texture2](gifs/texture2.gif)
+
+## Issues 
+
+### Texture Mapping
+- not any images can be mapped and still look nice , it has to be cropped to it's smallest element to look better.
+### Lighting 
+- had to figure out where to position the light source in respect to the floor to be illuminated properly.
+
+
+## Idea of the animations
+<!-- - The idea came to me when i was looking from my window down the street. -->
+<!-- - I call it "el3ab b3eed ya 7mada bdl m2t3 elkora". -->
+1. the 'car' moves along the z axis of the floor and turns around every time it reaches the edge
+2. the 'plane' spin around it's Y axis 
+3. the 'Robot' waves his BOTH hands
+4. the 'Robot' moves his leg to kick the ball and the ball bounces every time it reaches either the 'robor' or 'al Capone'.  
+
+## Conclusion
+ - the scene is controlled from the menu, you can gradually choose objects to start moving.
+ - Beside the animations controls,  you can choose the texture mapping of the floor from the same menu.
+
+## Use in biomedical field
+- it can be used to import objects constructed from several scans like mri or other imaging machines, then the user can view it in 3d scene for better view , looking to it from different angles and positions .
