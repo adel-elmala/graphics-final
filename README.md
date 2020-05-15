@@ -31,25 +31,25 @@
 
 ### Robot wave
 <!-- ![https://vimeo.com/user115583615/review/419045016/af9ce62da6](https://vimeo.com/user115583615/review/419045016/af9ce62da6) -->
-![wave](gifs/wave.gif)
+![https://vimeo.com/user115583615/review/419045016/af9ce62da6](gifs/wave.gif)
 ### Robot play soccer
 <!-- ![https://vimeo.com/user115583615/review/419044923/8fe10457c5](https://vimeo.com/user115583615/review/419044923/8fe10457c5) -->
-![Soccer](gifs/ball.gif)
+![https://vimeo.com/user115583615/review/419044923/8fe10457c5](gifs/ball.gif)
 ### Car Movement
 <!-- ![https://vimeo.com/user115583615/review/419045103/cfb1d502f8](https://vimeo.com/user115583615/review/419045103/cfb1d502f8) -->
 
-![car](gifs/car.gif)
+![https://vimeo.com/user115583615/review/419045103/cfb1d502f8](gifs/car.gif)
 
 ### Plane Movement
 <!-- ![https://vimeo.com/user115583615/review/419045055/33750ed128](https://vimeo.com/user115583615/review/419045055/33750ed128) -->
-![plane](gifs/plane.gif)
+![https://vimeo.com/user115583615/review/419045055/33750ed128](gifs/plane.gif)
 ## Texture Mapping
 ### View 1 
 <!-- ![https://vimeo.com/user115583615/review/419044762/9448b7b9e7](https://vimeo.com/user115583615/review/419044762/9448b7b9e7) -->
-![texture1](gifs/texture.gif)
+![https://vimeo.com/user115583615/review/419044762/9448b7b9e7](gifs/texture.gif)
 ### View 2
 <!-- ![https://vimeo.com/user115583615/review/419044849/b8a0a99f55](https://vimeo.com/user115583615/review/419044849/b8a0a99f55) -->
-![texture2](gifs/texture2.gif)
+![https://vimeo.com/user115583615/review/419044849/b8a0a99f55](gifs/texture2.gif)
 
 ## Issues 
 
