@@ -29,8 +29,17 @@ float pos = 0;
 float DRot = 90;
 float Zmax, Zmin;
 float VRot =0.0;
+float CRound = 0.0;
+float Crot  = 0.0;
+float Cpos = 0.0;
+
+GLMmodel* model;
+
 GLMmodel* pmodel;
 GLMmodel* pmodel1;
+GLMmodel* pmodel2 ;
+GLMmodel* pmodel3 ;
+GLMmodel* pmodel4 ;
 
 
 
@@ -39,9 +48,14 @@ GLfloat light_ambient[] = { 0.0, 0.0, 0.0, 0.0 };
 GLfloat light_diffuse[] = { 0.5, 0.5, 0.5,1.0 };
 GLfloat light_specular[] = {1.0, 1.0, 1.0, 1.0 };
 // x , y, z, w
-GLfloat light_position[] = {1.0,-5.0, 0.0, 1.0 };
-GLfloat lightPos1[] = {-1.0,-5.0,-2.0, 1.0 };
-GLfloat lightPos2[] = {-1.0,5.0,-2.0, 1.0 };
+GLfloat light_position[] = {1.0,-9.0, 0.0, 1.0 };
+GLfloat lightPos1[] = {-2.0,-9.0,-5.0, 1.0 };
+GLfloat lightPos2[] = {2.0,-9.0,5.0, 1.0 };
+
+// GLfloat light_position[] = {0.5,5.0, 0.0, 1.0 };
+// GLfloat lightPos1[] = {-0.5,-5.0,-2.0, 1.0 };
+
+// GLfloat lightPos2[] = {-0.5,-5.0,-2.0, 1.0 };
 // Material Properties
 GLfloat mat_amb_diff[] = {0.643, 0.753, 0.934, 1.0 };
 GLfloat mat_specular[] = { 0.0, 0.0, 0.0, 1.0 };
@@ -184,18 +198,9 @@ GLuint loadTexture(Image* image) {
 }
 
 GLuint _textureId; //The id of the texture
-// GLuint _textureId1; //The id of the texture
 
-// void drawmodel(void)
-// {
-// 		glmUnitize(pmodel1);
-// 		glmFacetNormals(pmodel1);
-// 		glmVertexNormals(pmodel1, 90.0);
-// 		glmScale(pmodel1, .15);
-// 		glmDraw(pmodel1, GLM_SMOOTH | GLM_MATERIAL);
-// }
 
-// GLuint startList;
+
 //Initializes 3D rendering
 void initRendering() {
 
@@ -267,6 +272,47 @@ void screen_menu(int value)
 	}
 
 	glutPostRedisplay();
+}
+
+void drawmodel3(char* path)
+{
+	if (!pmodel3) {
+		pmodel3 = glmReadOBJ(path);
+
+		if (!pmodel3) exit(0);
+		glmUnitize(pmodel3);
+		glmFacetNormals(pmodel3);
+		glmVertexNormals(pmodel3, 90.0);
+		glmScale(pmodel3, .15);
+	}
+	glmDraw(pmodel3, GLM_SMOOTH | GLM_MATERIAL);
+}
+void drawmodel4(char* path)
+{
+	if (!pmodel4) {
+		pmodel4 = glmReadOBJ(path);
+
+		if (!pmodel4) exit(0);
+		glmUnitize(pmodel4);
+		glmFacetNormals(pmodel4);
+		glmVertexNormals(pmodel4, 90.0);
+		glmScale(pmodel4, .15);
+	}
+	glmDraw(pmodel4, GLM_SMOOTH | GLM_MATERIAL);
+}
+
+void drawmodel2(char* path)
+{
+	if (!pmodel2) {
+		pmodel2 = glmReadOBJ(path);
+
+		if (!pmodel2) exit(0);
+		glmUnitize(pmodel2);
+		glmFacetNormals(pmodel2);
+		glmVertexNormals(pmodel2, 90.0);
+		glmScale(pmodel2, .15);
+	}
+	glmDraw(pmodel2, GLM_SMOOTH | GLM_MATERIAL);
 }
 
 void drawmodel1(char* path)
@@ -648,10 +694,11 @@ void display(void)
 	glLoadIdentity();
 	gluLookAt(eye[0], eye[1], eye[2], center[0], center[1], center[2], up[0], up[1], up[2]);
    
-   body();
+   
    // 
    glPushMatrix();
    glLightfv(GL_LIGHT1, GL_POSITION, lightPos1);
+   // glLightfv(GL_LIGHT2, GL_POSITION, lightPos2);
    glLightfv(GL_LIGHT0, GL_POSITION, light_position);
    glPopMatrix();
    //materials properties
@@ -659,21 +706,22 @@ void display(void)
    glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
    glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
    glPushMatrix();
-
+   body();
    glTranslatef(0, -3, 0);
    
    glPushMatrix();
 	glEnable(GL_TEXTURE_2D);
-      glBindTexture(GL_TEXTURE_2D, _textureId);
+   
+   glBindTexture(GL_TEXTURE_2D, _textureId);
 
 //       glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 //       glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 //       glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 //       glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);	
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
    glBegin(GL_QUADS);
       
@@ -692,15 +740,39 @@ glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 	glPopMatrix();
 
-     glPushMatrix();
+   glPushMatrix();
     	glTranslatef(0.0, 0.4, pos);
     	glRotatef(VRot,1,0,0);
     	glScalef(3, 3, 3);
     	drawmodel1("data/soccerball.obj");
        
 	glPopMatrix();
-    
-  
+
+   glPushMatrix();
+      
+      glTranslatef(0.0, 2.0, 10.0);
+      glRotatef(180,0,1,0);
+      glScalef(15, 15, 15);
+      drawmodel2("data/al.obj");
+         
+	glPopMatrix();
+   
+   glPushMatrix();
+      
+      glTranslatef(1.0, 2.0, -5.0);
+      glRotatef(DRot,0,1,0);
+      glScalef(15, 15, 15);
+      drawmodel3("data/f-16.obj");
+         
+	glPopMatrix();
+      glPushMatrix();
+      
+      glTranslatef(-4.0, 0.5, Cpos);
+      glRotatef(Crot,0,1,0);
+      glScalef(15, 15, 15);
+      drawmodel4("data/porsche.obj");
+         
+	glPopMatrix();
 	
    glPopMatrix();
    //  glPushMatrix();
@@ -970,8 +1042,22 @@ void DTimer1(int x){
 
 	DRot -= 1;
    
-	if (DRot == 0)
-		return;
+   if (Cpos == 10){
+      CRound = 1;
+      Crot = 180;
+   } 
+
+   if (Cpos == -10){
+      CRound = 0;
+      Crot = 0;
+   }
+   if(CRound == 0){
+      Cpos +=0.5;
+   } 
+
+   if(CRound == 1){
+      Cpos -=0.5;
+   } 
 	glutPostRedisplay();
 	glutTimerFunc(30, DTimer1, 0);
 
@@ -995,14 +1081,14 @@ void Timer1(int x){
    } 
    if (VRot == 360)
       VRot=0;
-   std::cout<<Lelbow <<std::endl;   
+   // std::cout<<Lelbow <<std::endl;   
    glutPostRedisplay();
    glutTimerFunc(50, Timer1, 0);
 }
 
 void Timer2(int x){
     // Refresh and redraw
-    if(pos >= 10.0){
+    if(pos >= 9.4){
        lab = 1.0;
        VRot = 180;
        
@@ -1056,6 +1142,7 @@ int main(int argc, char **argv)
 	glutAttachMenu(GLUT_RIGHT_BUTTON);
 	glutTimerFunc(0,Timer1,0);
    glutTimerFunc(0,Timer2,0);
+   glutTimerFunc(0,DTimer1,0);
    
     
 	
