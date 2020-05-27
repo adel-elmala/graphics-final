@@ -1,5 +1,5 @@
 # graphics-final-project
-# SBE306B_Spring20_Project_Group_xx
+# SBE306B_Spring20_Project_Group_04
 
 ## Team Members:
 - Name : Adel Refat Ali | Sec : 2 | Seat No.: 3 | Email: adel.elmala2025@gmail.com
@@ -11,20 +11,32 @@
 
 ## Implementation:
 ### Final result 
-![result](https://i.ibb.co/60hstCg/implem.png)
+<!-- ![result](https://i.ibb.co/60hstCg/implem.png) -->
+
+![result](./screenshots/implem.png)
 
 ## Loaded objects 
 ### object 1
-![car](https://i.ibb.co/bstxX8R/car2.png)
-![car](https://i.ibb.co/smLJ4Lp/car.png)
+<!-- ![car](https://i.ibb.co/bstxX8R/car2.png) -->
+<!-- ![car](https://i.ibb.co/smLJ4Lp/car.png) -->
+![car](./screenshots/car2.png)
+![car](./screenshots/car.png)
+
 ### object 2
-![al](https://i.ibb.co/nCMK2PZ/al2.png)
-![al](https://i.ibb.co/rKPyJQt/al.png)
+<!-- ![al](https://i.ibb.co/nCMK2PZ/al2.png)
+![al](https://i.ibb.co/rKPyJQt/al.png) -->
+![al](./screenshots/al2.png)
+![al](./screenshots/al.png)
+
 ### object 3
-![ball](https://i.ibb.co/ky4GtDL/ball.png)
+<!-- ![ball](https://i.ibb.co/ky4GtDL/ball.png) -->
+![ball](./screenshots/ball.png)
+`
 ### object 4
-![f-16](https://i.ibb.co/TRkgv8X/f-16-2.png)
-![f-16](https://i.ibb.co/6JfLDRX/f-16.png)
+<!-- ![f-16](https://i.ibb.co/TRkgv8X/f-16-2.png) -->
+<!-- ![f-16](https://i.ibb.co/6JfLDRX/f-16.png) -->
+![f-16](./screenshots/f-16-2.png)
+![f-16](./screenshots/f-16.png)
 
 
 ## animations
@@ -72,4 +84,38 @@
  - Beside the animations controls,  you can choose the texture mapping of the floor from the same menu.
 
 ## Use in biomedical field
-- it can be used to import objects constructed from several scans like mri or other imaging machines, then the user can view it in 3d scene for better view , looking to it from different angles and positions .
+- it can be used to import objects constructed from several scans like mri or other imaging machines, then the user can view it in 3d scene for better view , looking to it from different angles and positions.
+
+## Controls
+### Robot controls
+
+<!-- | Robot        | key           | controls  || -->
+<!-- | ------------- |:-------------:| -----:| -----:| -->
+| **Body Part**   | **key**    | **Body Part**     |**key**|
+| :-------------:   |:----------:| :-----------------:| :-----:|
+| Left Arm        | z - Z      |  Right Arm        | a - A |
+|  Left Shoulder  | x - X      |   Right Shoulder  | s - S |
+|  Left Elbow     |   d - D    |   Right Elbow     | e - E |
+|Left Hip         | y -Y       |Right Hip          | h - H |
+|Left leg         | o - O      |Right leg          |l -L   |
+|Left Knee        |i - I       |Right Knee         |k - K  |
+|Left Base        |f - F       |Right Base         |f - F  |
+|Left Flang       |v - V       |Right Flang        |v - V  |
+
+### Camera controls
+|Action|Key |Action|key|
+|:-----:|-----:|:-----:|-----:|
+|Zoom In |B|Zoom out|b|
+|left| <-- OR mouse|Right| --> OR mouse|
+|Down|down-arrow|UP|up-arrow|
+
+
+### Animation Controls
+**_Left Click and Choose_**
+
+### Compile 
+
+`g++ -o out SBE306B_Spring20_Project_Group_04.cpp ./srcs/imageloader.cpp ./srcs/glm.cpp -lGL -lglut -lGLU -lm`
+### Run 
+
+`./out`
